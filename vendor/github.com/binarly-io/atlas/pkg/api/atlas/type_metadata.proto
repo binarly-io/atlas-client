@@ -1,0 +1,95 @@
+// Copyright 2020 The Atlas Authors. All rights reserved.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+syntax = "proto3";
+
+package atlas;
+
+import "google/protobuf/timestamp.proto";
+import "type_uuid.proto";
+
+// Metadata describes metadata or the object
+message Metadata {
+    oneof type_optional {
+        // Type of the object
+        // Object can be typed/identified either by type or by name
+        int32 type = 100;
+    }
+
+    oneof name_optional {
+        // Name of the object
+        // Object can be typed/identified either by type or by name
+        string name = 200;
+    }
+
+    oneof version_optional {
+        // Version of the object
+        int32 version = 300;
+    }
+
+    oneof uuid_optional {
+        // Unique identified of the object
+        UUID uuid = 400;
+    }
+
+    oneof uuid_reference_optional {
+        // Unique identifier of the reference object, if necessary
+        UUID uuid_reference = 500;
+    }
+
+    oneof timestamp_optional {
+        // Timestamp is optional
+        google.protobuf.Timestamp ts = 600;
+    }
+
+    oneof encoding_optional {
+        // Encoding is optional
+        string encoding = 700;
+    }
+
+    oneof compression_optional {
+        // Compression is optional
+        string compression = 800;
+    }
+
+    oneof filename_optional {
+        // Filename is optional
+        string filename = 900;
+    }
+
+    oneof url_optional {
+        // URL is optional
+        string url = 1000;
+    }
+
+    oneof description_optional {
+        // Description is optional
+        string description = 1100;
+    }
+
+    oneof len_optional {
+        // Len is optional
+        int64 len = 1200;
+    }
+
+    oneof offset_optional {
+        // Offset is optional
+        int64 offset = 1300;
+    }
+
+    oneof last_optional {
+        // Last is optional
+        bool last = 1400;
+    }
+}
