@@ -11,6 +11,8 @@ CONFIG_DIR="${SRC_ROOT}/config"
 
 REPO="github.com/binarly-io/atlas-client"
 
+# Name of the project us in all software ID and config vars
+PROJECT_NAME="atlas-client"
 # 1.2.3
 VERSION=$(cd "${SRC_ROOT}"; cat release)
 # 885c3f7
@@ -18,23 +20,39 @@ GIT_SHA=$(cd "${CUR_DIR}"; git rev-parse --short HEAD)
 # 2020-01-02 12:34:56
 NOW=$(date "+%FT%T")
 
+# Check with:
+# go tool dist list
+# ----------------
+# GOOS=
 # linux
 # windows
-# GOOS=""
+# android
+# darwin
+# GOARCH=
+# 386
 # amd64
-# GOARCH=""
+# arm
+# arm64
 
-if [[ "$OSTYPE" == "cygwin" ]]; then
-    # cygwin
-    GOOS="windows"
-elif [[ "$OSTYPE" == "msys" ]]; then
-    # mingw
-    GOOS="windows"
-elif [[ "$OSTYPE" == "win32" ]]; then
-    # windows
-    GOOS="windows"
-else
-    GOOS="linux"
+GOOS="${GOOS:-}"
+CLIENT_BIN="${CLIENT_BIN:-}"
+CGO_ENABLED="${CGO_ENABLED:-}"
+
+# What OS are we going to build for?
+if [[ -z "${GOOS}" ]]; then
+    # No target OS explicitly specified, check what we have around
+    if [[ "${OSTYPE}" == "cygwin" ]]; then
+        # cygwin
+        GOOS="windows"
+    elif [[ "${OSTYPE}" == "msys" ]]; then
+        # mingw
+        GOOS="windows"
+    elif [[ "${OSTYPE}" == "win32" ]]; then
+        # windows, not sure about this
+        GOOS="windows"
+    else
+        GOOS="linux"
+    fi
 fi
 
 # Client binary name can be specified externally
@@ -46,6 +64,13 @@ else
     if [[ -z "${CLIENT_BIN}" ]]; then
         CLIENT_BIN="${SRC_ROOT}/dev/bin/client"
     fi
+fi
+
+if [[ -z "${CGO_ENABLED}" ]]; then
+    # Default value for CGO_ENABLED
+    # CGO_ENABLED=1 means "dynamically linked"
+    # CGO_ENABLED=0 means "statically linked"
+    CGO_ENABLED="0"
 fi
 
 CLIENT_BUILDER_SCRIPT="go_build_client.sh"

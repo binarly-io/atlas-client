@@ -24,16 +24,19 @@ if [[ -z "${MAIN_SRC_FILE}" ]]; then
     MAIN_SRC_FILE="${SRC_ROOT}/cmd/client/main.go"
 fi
 
-GOOS=linux
-GOARCH=amd64
+echo "Build params:"
+echo "CGO_ENABLED=${CGO_ENABLED}"
+echo "GOOS=${GOOS}"
+echo "GOARCH=${GOARCH}"
 
-if CGO_ENABLED=0 GO111MODULE=on GOOS="${GOOS}" GOARCH="${GOARCH}" go build \
+if CGO_ENABLED="${CGO_ENABLED}" GO111MODULE=on GOOS="${GOOS}" GOARCH="${GOARCH}" go build \
     -mod="${MODULES_DIR}" \
     -a \
     -ldflags " \
-        -X ${REPO}/pkg/version.Version=${VERSION} \
-        -X ${REPO}/pkg/version.GitSHA=${GIT_SHA}  \
-        -X ${REPO}/pkg/version.BuiltAt=${NOW}     \
+        -X ${REPO}/pkg/softwareid.Name=${PROJECT_NAME} \
+        -X ${REPO}/pkg/softwareid.Version=${VERSION}   \
+        -X ${REPO}/pkg/softwareid.GitSHA=${GIT_SHA}    \
+        -X ${REPO}/pkg/softwareid.BuiltAt=${NOW}       \
     " \
     -o "${OUTPUT_BIN}" \
     "${MAIN_SRC_FILE}"

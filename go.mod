@@ -4,7 +4,7 @@ go 1.13
 
 require (
 	github.com/MakeNowJust/heredoc v1.0.0
-	github.com/binarly-io/atlas v0.0.0-20200603164845-e0e60b79b9cb
+	github.com/binarly-io/atlas v0.0.0-20200604164409-0198479a837b
 	github.com/sirupsen/logrus v1.5.0
 	github.com/spf13/cobra v1.0.0
 	github.com/spf13/viper v1.4.0

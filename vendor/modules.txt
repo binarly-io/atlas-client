@@ -2,14 +2,14 @@
 cloud.google.com/go/compute/metadata
 # github.com/MakeNowJust/heredoc v1.0.0
 github.com/MakeNowJust/heredoc
-# github.com/binarly-io/atlas v0.0.0-20200603164845-e0e60b79b9cb
+# github.com/binarly-io/atlas v0.0.0-20200604164409-0198479a837b
 github.com/binarly-io/atlas/pkg/ainit
-github.com/binarly-io/atlas/pkg/alog
 github.com/binarly-io/atlas/pkg/api/atlas
 github.com/binarly-io/atlas/pkg/auth/client
 github.com/binarly-io/atlas/pkg/config
 github.com/binarly-io/atlas/pkg/controller
 github.com/binarly-io/atlas/pkg/controller/client
+github.com/binarly-io/atlas/pkg/logger
 github.com/binarly-io/atlas/pkg/minio
 github.com/binarly-io/atlas/pkg/transport/client
 # github.com/coreos/go-oidc v2.2.1+incompatible
