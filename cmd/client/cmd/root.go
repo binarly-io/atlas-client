@@ -22,12 +22,12 @@ import (
 	cmd "github.com/spf13/cobra"
 	conf "github.com/spf13/viper"
 
-	"github.com/binarly-io/atlas-client/pkg/softwareid"
 	"github.com/binarly-io/atlas/pkg/ainit"
 	"github.com/binarly-io/atlas/pkg/config"
 	"github.com/binarly-io/atlas/pkg/logger"
 
 	"github.com/binarly-io/atlas-client/pkg/config/client"
+	"github.com/binarly-io/atlas-client/pkg/softwareid"
 )
 
 const (
