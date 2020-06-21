@@ -2,7 +2,7 @@
 cloud.google.com/go/compute/metadata
 # github.com/MakeNowJust/heredoc v1.0.0
 github.com/MakeNowJust/heredoc
-# github.com/binarly-io/atlas v0.0.0-20200605134343-07d2c01e7edb
+# github.com/binarly-io/atlas v0.0.0-20200621132911-07b0db741511
 github.com/binarly-io/atlas/pkg/ainit
 github.com/binarly-io/atlas/pkg/api/atlas
 github.com/binarly-io/atlas/pkg/auth/client
@@ -10,7 +10,6 @@ github.com/binarly-io/atlas/pkg/config
 github.com/binarly-io/atlas/pkg/controller
 github.com/binarly-io/atlas/pkg/controller/client
 github.com/binarly-io/atlas/pkg/logger
-github.com/binarly-io/atlas/pkg/minio
 github.com/binarly-io/atlas/pkg/transport/client
 # github.com/coreos/go-oidc v2.2.1+incompatible
 github.com/coreos/go-oidc
@@ -37,29 +36,14 @@ github.com/hashicorp/hcl/json/scanner
 github.com/hashicorp/hcl/json/token
 # github.com/inconshreveable/mousetrap v1.0.0
 github.com/inconshreveable/mousetrap
-# github.com/json-iterator/go v1.1.9
-github.com/json-iterator/go
 # github.com/konsorten/go-windows-terminal-sequences v1.0.1
 github.com/konsorten/go-windows-terminal-sequences
 # github.com/magiconair/properties v1.8.0
 github.com/magiconair/properties
-# github.com/minio/minio-go/v6 v6.0.55
-github.com/minio/minio-go/v6
-github.com/minio/minio-go/v6/pkg/credentials
-github.com/minio/minio-go/v6/pkg/encrypt
-github.com/minio/minio-go/v6/pkg/s3utils
-github.com/minio/minio-go/v6/pkg/set
-github.com/minio/minio-go/v6/pkg/signer
-# github.com/minio/sha256-simd v0.1.1
-github.com/minio/sha256-simd
 # github.com/mitchellh/go-homedir v1.1.0
 github.com/mitchellh/go-homedir
 # github.com/mitchellh/mapstructure v1.1.2
 github.com/mitchellh/mapstructure
-# github.com/modern-go/concurrent v0.0.0-20180228061459-e0a39a4cb421
-github.com/modern-go/concurrent
-# github.com/modern-go/reflect2 v0.0.0-20180701023420-4b7aa43c6742
-github.com/modern-go/reflect2
 # github.com/pelletier/go-toml v1.2.0
 github.com/pelletier/go-toml
 # github.com/pquerna/cachecontrol v0.0.0-20180517163645-1555304b9b35
@@ -85,8 +69,6 @@ github.com/ulikunitz/xz/internal/hash
 github.com/ulikunitz/xz/internal/xlog
 github.com/ulikunitz/xz/lzma
 # golang.org/x/crypto v0.0.0-20200204104054-c9f3fb736b72
-golang.org/x/crypto/argon2
-golang.org/x/crypto/blake2b
 golang.org/x/crypto/ed25519
 golang.org/x/crypto/ed25519/internal/edwards25519
 golang.org/x/crypto/pbkdf2
@@ -98,7 +80,6 @@ golang.org/x/net/http2
 golang.org/x/net/http2/hpack
 golang.org/x/net/idna
 golang.org/x/net/internal/timeseries
-golang.org/x/net/publicsuffix
 golang.org/x/net/trace
 # golang.org/x/oauth2 v0.0.0-20200107190931-bf48bf16ab8d => github.com/sunsingerus/oauth2 v0.0.0-20200410181841-d7afaacd4cbe
 golang.org/x/oauth2
@@ -109,7 +90,6 @@ golang.org/x/oauth2/internal
 golang.org/x/oauth2/jws
 golang.org/x/oauth2/jwt
 # golang.org/x/sys v0.0.0-20190422165155-953cdadca894
-golang.org/x/sys/cpu
 golang.org/x/sys/unix
 # golang.org/x/text v0.3.2
 golang.org/x/text/secure/bidirule
@@ -201,8 +181,6 @@ google.golang.org/protobuf/runtime/protoimpl
 google.golang.org/protobuf/types/known/anypb
 google.golang.org/protobuf/types/known/durationpb
 google.golang.org/protobuf/types/known/timestamppb
-# gopkg.in/ini.v1 v1.42.0
-gopkg.in/ini.v1
 # gopkg.in/square/go-jose.v2 v2.5.1
 gopkg.in/square/go-jose.v2
 gopkg.in/square/go-jose.v2/cipher
