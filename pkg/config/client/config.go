@@ -50,12 +50,7 @@ type ConfigClient struct {
 	// IMPORTANT
 }
 
-var Config ConfigClient
-
-func ReadIn() {
-	_ = conf.Unmarshal(&Config)
-}
-
+// String returns string representation of the configuration
 func (c *ConfigClient) String() string {
 	b := &bytes.Buffer{}
 
@@ -79,4 +74,12 @@ func (c *ConfigClient) String() string {
 	_, _ = fmt.Fprintf(b, "InitialAccessToken: %v\n", c.InitialAccessToken)
 
 	return b.String()
+}
+
+// Config is the configuration
+var Config ConfigClient
+
+// ReadIn reads all specified configuration sources and builds final aggregated configuration
+func ReadIn() {
+	_ = conf.Unmarshal(&Config)
 }
