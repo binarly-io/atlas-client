@@ -12,32 +12,25 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package ainit
+package config
 
 import (
-	"context"
+	"fmt"
 	"os"
-	"os/signal"
-	"syscall"
+	"strings"
 )
 
-// ContextInit
-func ContextInit() context.Context {
-	// Set OS signals and termination context
-	ctx, cancelFunc := context.WithCancel(context.Background())
-	stopChan := make(chan os.Signal, 2)
-	signal.Notify(stopChan, os.Interrupt, syscall.SIGTERM)
-	go func() {
-		<-stopChan
-		cancelFunc()
-		<-stopChan
-		os.Exit(1)
-	}()
+// joinFilePaths
+func joinFilePaths(paths []string, filename string) []string {
+	res := []string{}
+	for _, path := range paths {
+		res = append(res, fmt.Sprintf("%s%c%s", path, os.PathSeparator, filename))
+	}
 
-	return ctx
+	return res
 }
 
-// ContextWait
-func ContextWait(ctx context.Context) {
-	<-ctx.Done()
+// getFilePathsString
+func getFilePathsString(paths []string, filename string) string {
+	return strings.Join(joinFilePaths(paths, filename), string(os.PathListSeparator))
 }

@@ -16,13 +16,14 @@ package cmd
 
 import (
 	"fmt"
+
 	"github.com/MakeNowJust/heredoc"
 	log "github.com/sirupsen/logrus"
 	cmd "github.com/spf13/cobra"
 	conf "github.com/spf13/viper"
 	"google.golang.org/grpc"
 
-	"github.com/binarly-io/atlas/pkg/ainit"
+	"github.com/binarly-io/atlas/pkg/app"
 	"github.com/binarly-io/atlas/pkg/api/atlas"
 	"github.com/binarly-io/atlas/pkg/controller"
 	"github.com/binarly-io/atlas/pkg/controller/client"
@@ -65,7 +66,7 @@ var sendCmd = &cmd.Command{
 		//filename := args[0]
 
 		// Init termination context
-		ctx := ainit.ContextInit()
+		ctx := app.ContextInit()
 
 		log.Infof("Starting client. Version:%s GitSHA:%s BuiltAt:%s\n", softwareid.Version, softwareid.GitSHA, softwareid.BuiltAt)
 
@@ -91,15 +92,15 @@ var sendCmd = &cmd.Command{
 		//		go controller_client.SendEchoRequest(controller.GetOutgoing())
 
 		if sendFilename != "" {
-			_, _ = controller_client.SendFile(ControlPlaneClient, sendFilename)
+			_, _ = controller_client.SendFile(ControlPlaneClient, sendFilename, nil)
 		}
 
 		if sendSTDIN {
-			_, _ = controller_client.SendStdin(ControlPlaneClient)
+			_, _ = controller_client.SendStdin(ControlPlaneClient, nil)
 		}
 
 		log.Infof("Press Ctrl+C to exit...")
-		ainit.ContextWait(ctx)
+		app.ContextWait(ctx)
 	},
 }
 

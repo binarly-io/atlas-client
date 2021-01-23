@@ -15,8 +15,6 @@
 package config
 
 import (
-	"fmt"
-	"os"
 	"runtime"
 	"strings"
 
@@ -29,19 +27,6 @@ var (
 	// ConfigFile defines path to config file to be used
 	ConfigFile string
 )
-
-func joinFilePaths(paths []string, filename string) []string {
-	res := []string{}
-	for _, path := range paths {
-		res = append(res, fmt.Sprintf("%s%c%s", path, os.PathSeparator, filename))
-	}
-
-	return res
-}
-
-func getFilePathsString(paths []string, filename string) string {
-	return strings.Join(joinFilePaths(paths, filename), string(os.PathListSeparator))
-}
 
 const (
 	root = "root"
@@ -60,6 +45,7 @@ type Config struct {
 	configType   string
 }
 
+// NewConfig
 func NewConfig() *Config {
 	config := &Config{
 		envVarPrefix: "",
@@ -70,21 +56,25 @@ func NewConfig() *Config {
 	return config
 }
 
+// SetEnvVarPrefix
 func (c *Config) SetEnvVarPrefix(prefix string) *Config {
 	c.envVarPrefix = strings.Replace(strings.ToUpper(prefix), "-", "_", -1)
 	return c
 }
 
+// SetConfigFile
 func (c *Config) SetConfigFile(file string) *Config {
 	c.configFile = file
 	return c
 }
 
+// SetConfigType
 func (c *Config) SetConfigType(_type string) *Config {
 	c.configType = _type
 	return c
 }
 
+// AddWindowsPaths
 func (c *Config) AddWindowsPaths(rootPaths, homeRelativePaths []string) *Config {
 	pathSet := make(PathSet)
 	pathSet[root] = rootPaths
@@ -94,6 +84,7 @@ func (c *Config) AddWindowsPaths(rootPaths, homeRelativePaths []string) *Config 
 	return c
 }
 
+// AddLinuxPaths
 func (c *Config) AddLinuxPaths(rootPaths, homeRelativePaths []string) *Config {
 	pathSet := make(PathSet)
 	pathSet[root] = rootPaths
@@ -103,14 +94,17 @@ func (c *Config) AddLinuxPaths(rootPaths, homeRelativePaths []string) *Config {
 	return c
 }
 
+// getRootPaths
 func (c *Config) getRootPaths() []string {
 	return c.getPaths(root)
 }
 
+// getHomePaths
 func (c *Config) getHomePaths() []string {
 	return c.getPaths(home)
 }
 
+// getPaths
 func (c *Config) getPaths(what string) []string {
 	if _, ok := c.pathOptions[runtime.GOOS]; ok {
 		paths, _ := c.pathOptions[runtime.GOOS][what]

@@ -24,57 +24,65 @@ var _ = math.Inf
 // proto package needs to be updated.
 const _ = proto.ProtoPackageIsVersion3 // please upgrade the proto package
 
-func init() {
-	proto.RegisterFile("service_control_plane.proto", fileDescriptor_144c4e5d826a1f85)
-}
+func init() { proto.RegisterFile("service_control_plane.proto", fileDescriptor_144c4e5d826a1f85) }
 
 var fileDescriptor_144c4e5d826a1f85 = []byte{
-	// 183 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xe2, 0x92, 0x2e, 0x4e, 0x2d, 0x2a,
-	0xcb, 0x4c, 0x4e, 0x8d, 0x4f, 0xce, 0xcf, 0x2b, 0x29, 0xca, 0xcf, 0x89, 0x2f, 0xc8, 0x49, 0xcc,
-	0x4b, 0xd5, 0x2b, 0x28, 0xca, 0x2f, 0xc9, 0x17, 0x62, 0x4d, 0x2c, 0xc9, 0x49, 0x2c, 0x96, 0x12,
-	0x2a, 0xa9, 0x2c, 0x00, 0x29, 0xc8, 0xcd, 0x4d, 0xcc, 0x4b, 0x81, 0x48, 0x49, 0x89, 0x82, 0xc5,
-	0x52, 0x12, 0x4b, 0x12, 0xe3, 0x93, 0x33, 0x4a, 0xf3, 0xb2, 0xa1, 0xc2, 0x82, 0x60, 0xe1, 0xdc,
-	0xd4, 0x92, 0xa2, 0xcc, 0x64, 0x88, 0x90, 0xd1, 0x52, 0x46, 0x2e, 0x1e, 0x67, 0x88, 0xe1, 0x01,
-	0x20, 0xb3, 0x85, 0x0c, 0xb8, 0x38, 0x9c, 0x21, 0x66, 0x15, 0x0b, 0xf1, 0xe9, 0x81, 0xad, 0xd0,
-	0x83, 0x0a, 0x48, 0xa1, 0xf1, 0x95, 0x18, 0x34, 0x18, 0x0d, 0x18, 0x85, 0xcc, 0xb8, 0xb8, 0x5c,
-	0x12, 0x4b, 0x12, 0x9d, 0x41, 0x16, 0x15, 0x0b, 0x09, 0x40, 0xd5, 0xc0, 0x85, 0xa4, 0x30, 0x44,
-	0xa0, 0xfa, 0xb4, 0xb9, 0xd8, 0x7d, 0xc1, 0x4e, 0x29, 0x16, 0xe2, 0x85, 0x2a, 0x81, 0xf0, 0xa5,
-	0x50, 0xb9, 0x20, 0xe5, 0x49, 0x6c, 0x60, 0xe7, 0x1a, 0x03, 0x02, 0x00, 0x00, 0xff, 0xff, 0x07,
-	0x19, 0xc1, 0x7f, 0x12, 0x01, 0x00, 0x00,
+	// 263 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x6c, 0x90, 0x4f, 0x4b, 0x03, 0x31,
+	0x10, 0xc5, 0x5b, 0xc1, 0x3f, 0x84, 0x2a, 0x3a, 0x54, 0xa4, 0xf1, 0x20, 0xf4, 0x24, 0x08, 0x4b,
+	0x51, 0xf0, 0xe0, 0x75, 0x15, 0x4f, 0x05, 0xd1, 0x0f, 0x10, 0xc6, 0x6d, 0xc0, 0xc5, 0x6c, 0x36,
+	0x26, 0xb3, 0xc2, 0x7e, 0x25, 0x3f, 0xa5, 0x24, 0x19, 0xc4, 0x6e, 0xf7, 0xf8, 0x7e, 0xef, 0xcd,
+	0xf0, 0x66, 0xc4, 0x65, 0xd0, 0xfe, 0xbb, 0xae, 0xb4, 0xaa, 0x5a, 0x4b, 0xbe, 0x35, 0xca, 0x19,
+	0xb4, 0xba, 0x70, 0xbe, 0xa5, 0x16, 0xf6, 0x91, 0x0c, 0x06, 0x09, 0xd4, 0xbb, 0x18, 0x68, 0x1a,
+	0xb4, 0x9b, 0x6c, 0xc9, 0xf3, 0xc4, 0x36, 0x48, 0xa8, 0xaa, 0x8f, 0xce, 0x7e, 0x32, 0x3e, 0x4b,
+	0xb8, 0xd1, 0xe4, 0xeb, 0x8a, 0xd1, 0x22, 0xa1, 0x40, 0x48, 0x5d, 0x50, 0x5e, 0x7f, 0x75, 0x3a,
+	0x10, 0x5b, 0x57, 0x23, 0x96, 0x6a, 0x3a, 0x43, 0x35, 0x07, 0x2e, 0xb6, 0x03, 0xce, 0xf4, 0xd9,
+	0xb8, 0xfd, 0xd9, 0x13, 0xb3, 0x32, 0x37, 0x7e, 0x89, 0x85, 0x61, 0x25, 0x8e, 0xca, 0x5c, 0x30,
+	0xc0, 0x49, 0x91, 0x7a, 0x17, 0x0c, 0xe4, 0x40, 0x2f, 0x27, 0xd7, 0xd3, 0xd5, 0x14, 0xee, 0x85,
+	0x78, 0x44, 0xc2, 0x32, 0xb6, 0x0f, 0x70, 0xca, 0x99, 0x3f, 0x24, 0x77, 0x08, 0xcf, 0xdd, 0x88,
+	0xc3, 0x75, 0xba, 0x2f, 0xc0, 0x31, 0x47, 0xb2, 0x96, 0xdb, 0x32, 0xc6, 0xe1, 0x41, 0xcc, 0x9e,
+	0x2c, 0xd5, 0xd4, 0xbf, 0xa5, 0x1b, 0x60, 0xce, 0x91, 0x2c, 0x5f, 0xf3, 0xc9, 0x12, 0x06, 0xd4,
+	0x99, 0x7e, 0x39, 0x81, 0x67, 0x31, 0xff, 0x3f, 0xbb, 0x8e, 0x7f, 0x71, 0x46, 0xc3, 0x62, 0x6c,
+	0x47, 0x72, 0xc7, 0x17, 0xbd, 0x1f, 0xa4, 0x9f, 0xdd, 0xfd, 0x06, 0x00, 0x00, 0xff, 0xff, 0xf2,
+	0x1a, 0x52, 0x72, 0xec, 0x01, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
 var _ context.Context
-var _ grpc.ClientConnInterface
+var _ grpc.ClientConn
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the grpc package it is being compiled against.
-const _ = grpc.SupportPackageIsVersion6
+const _ = grpc.SupportPackageIsVersion4
 
 // ControlPlaneClient is the client API for ControlPlane service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type ControlPlaneClient interface {
-	// Bi-directional Commands stream
-	//
+	//*
+	// Bi-directional Commands stream.
 	// Commands are sent from service to client and from client to server
 	Commands(ctx context.Context, opts ...grpc.CallOption) (ControlPlane_CommandsClient, error)
-	// Bi-directional Data stream
-	//
+	//*
+	// Bi-directional Data stream.
 	// Some commands may be followed by data load. Be it logs, dumps, etc.
 	DataChunks(ctx context.Context, opts ...grpc.CallOption) (ControlPlane_DataChunksClient, error)
-	// Metrics stream
-	//
-	// Some commands may be followed by metrics stream.
+	//*
+	// Uni-directional Metrics stream from client to server.
 	Metrics(ctx context.Context, opts ...grpc.CallOption) (ControlPlane_MetricsClient, error)
+	//*
+	// EntityStatus checks status of the entity on the server.
+	EntityStatus(ctx context.Context, in *StatusRequest, opts ...grpc.CallOption) (*StatusReply, error)
+	//*
+	// EntityStatusMulti checks status of the multiple entities on server.
+	EntityStatusMultiple(ctx context.Context, in *StatusRequestMulti, opts ...grpc.CallOption) (*StatusReply, error)
 }
 
 type controlPlaneClient struct {
-	cc grpc.ClientConnInterface
+	cc *grpc.ClientConn
 }
 
-func NewControlPlaneClient(cc grpc.ClientConnInterface) ControlPlaneClient {
+func NewControlPlaneClient(cc *grpc.ClientConn) ControlPlaneClient {
 	return &controlPlaneClient{cc}
 }
 
@@ -174,20 +182,43 @@ func (x *controlPlaneMetricsClient) CloseAndRecv() (*Metric, error) {
 	return m, nil
 }
 
+func (c *controlPlaneClient) EntityStatus(ctx context.Context, in *StatusRequest, opts ...grpc.CallOption) (*StatusReply, error) {
+	out := new(StatusReply)
+	err := c.cc.Invoke(ctx, "/atlas.ControlPlane/EntityStatus", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *controlPlaneClient) EntityStatusMultiple(ctx context.Context, in *StatusRequestMulti, opts ...grpc.CallOption) (*StatusReply, error) {
+	out := new(StatusReply)
+	err := c.cc.Invoke(ctx, "/atlas.ControlPlane/EntityStatusMultiple", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // ControlPlaneServer is the server API for ControlPlane service.
 type ControlPlaneServer interface {
-	// Bi-directional Commands stream
-	//
+	//*
+	// Bi-directional Commands stream.
 	// Commands are sent from service to client and from client to server
 	Commands(ControlPlane_CommandsServer) error
-	// Bi-directional Data stream
-	//
+	//*
+	// Bi-directional Data stream.
 	// Some commands may be followed by data load. Be it logs, dumps, etc.
 	DataChunks(ControlPlane_DataChunksServer) error
-	// Metrics stream
-	//
-	// Some commands may be followed by metrics stream.
+	//*
+	// Uni-directional Metrics stream from client to server.
 	Metrics(ControlPlane_MetricsServer) error
+	//*
+	// EntityStatus checks status of the entity on the server.
+	EntityStatus(context.Context, *StatusRequest) (*StatusReply, error)
+	//*
+	// EntityStatusMulti checks status of the multiple entities on server.
+	EntityStatusMultiple(context.Context, *StatusRequestMulti) (*StatusReply, error)
 }
 
 // UnimplementedControlPlaneServer can be embedded to have forward compatible implementations.
@@ -202,6 +233,12 @@ func (*UnimplementedControlPlaneServer) DataChunks(srv ControlPlane_DataChunksSe
 }
 func (*UnimplementedControlPlaneServer) Metrics(srv ControlPlane_MetricsServer) error {
 	return status.Errorf(codes.Unimplemented, "method Metrics not implemented")
+}
+func (*UnimplementedControlPlaneServer) EntityStatus(ctx context.Context, req *StatusRequest) (*StatusReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method EntityStatus not implemented")
+}
+func (*UnimplementedControlPlaneServer) EntityStatusMultiple(ctx context.Context, req *StatusRequestMulti) (*StatusReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method EntityStatusMultiple not implemented")
 }
 
 func RegisterControlPlaneServer(s *grpc.Server, srv ControlPlaneServer) {
@@ -286,10 +323,55 @@ func (x *controlPlaneMetricsServer) Recv() (*Metric, error) {
 	return m, nil
 }
 
+func _ControlPlane_EntityStatus_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(StatusRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ControlPlaneServer).EntityStatus(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/atlas.ControlPlane/EntityStatus",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ControlPlaneServer).EntityStatus(ctx, req.(*StatusRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ControlPlane_EntityStatusMultiple_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(StatusRequestMulti)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ControlPlaneServer).EntityStatusMultiple(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/atlas.ControlPlane/EntityStatusMultiple",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ControlPlaneServer).EntityStatusMultiple(ctx, req.(*StatusRequestMulti))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _ControlPlane_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "atlas.ControlPlane",
 	HandlerType: (*ControlPlaneServer)(nil),
-	Methods:     []grpc.MethodDesc{},
+	Methods: []grpc.MethodDesc{
+		{
+			MethodName: "EntityStatus",
+			Handler:    _ControlPlane_EntityStatus_Handler,
+		},
+		{
+			MethodName: "EntityStatusMultiple",
+			Handler:    _ControlPlane_EntityStatusMultiple_Handler,
+		},
+	},
 	Streams: []grpc.StreamDesc{
 		{
 			StreamName:    "Commands",

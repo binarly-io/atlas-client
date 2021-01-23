@@ -12,14 +12,15 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package ainit
+/**
+ * Domain represents abstract domain.
+ */
+syntax = "proto3";
 
-import (
-	"github.com/binarly-io/atlas/pkg/config"
-	"github.com/binarly-io/atlas/pkg/logger"
-)
+package atlas;
 
-func Init(conf *config.Config) {
-	logger.InitLog()
-	config.InitConfig(conf)
+// Entity represents abstract entity.
+message Entity {
+    // Entity name
+    string name = 100;
 }

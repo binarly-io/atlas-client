@@ -14,19 +14,11 @@
 
 package atlas
 
+// NewDataChunk
 func NewDataChunk(transportMD, payloadMD *Metadata, offset *int64, last bool, data []byte) *DataChunk {
 	dc := &DataChunk{
-		Header: NewMetadata(
-			int32(DataChunkType_DATA_CHUNK_TYPE_DATA),
-			"",
-			0,
-			"123",
-			"",
-			0,
-			0,
-			"data chunk",
-		),
-		Bytes: data,
+		Header: NewMetadata().SetType(MetadataType(DataChunkType_DATA_CHUNK_TYPE_DATA)),
+		Bytes:  data,
 	}
 
 	if transportMD != nil {
@@ -104,4 +96,8 @@ func (dc *DataChunk) SetPayloadMetadata(metadata *Metadata) {
 		dc.PayloadMetadataOptional = new(DataChunk_PayloadMetadata)
 	}
 	dc.PayloadMetadataOptional.(*DataChunk_PayloadMetadata).PayloadMetadata = metadata
+}
+
+func (dc *DataChunk) GetOffset() int64 {
+	return dc.GetHeader().GetOffset()
 }

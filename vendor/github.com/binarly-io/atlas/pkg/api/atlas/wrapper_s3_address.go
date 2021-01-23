@@ -14,9 +14,18 @@
 
 package atlas
 
+// NewS3Address
 func NewS3Address(bucket, object string) *S3Address {
 	return &S3Address{
 		Bucket: bucket,
 		Object: object,
 	}
+}
+
+// Printable
+func (m *S3Address) Printable() string {
+	if m != nil {
+		return m.Bucket + "/" + m.Object
+	}
+	return ""
 }

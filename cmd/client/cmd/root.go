@@ -22,7 +22,7 @@ import (
 	cmd "github.com/spf13/cobra"
 	conf "github.com/spf13/viper"
 
-	"github.com/binarly-io/atlas/pkg/ainit"
+	"github.com/binarly-io/atlas/pkg/app"
 	"github.com/binarly-io/atlas/pkg/config"
 	"github.com/binarly-io/atlas/pkg/logger"
 
@@ -82,12 +82,13 @@ func init() {
 			AddLinuxPaths([]string{etcConfigFireDir}, []string{homedirConfigFileDir}).
 			SetConfigFile(defaultConfigFileNoExt).
 			SetEnvVarPrefix(softwareid.Name)
-		ainit.Init(conf)
+		app.Init(conf)
 		config_client.ReadIn()
 	})
 
 	// Common section
-	rootCmd.PersistentFlags().BoolVarP(&logger.Verbose, "verbose", "v", false, "verbose output")
+	rootCmd.PersistentFlags().StringVar(&logger.Level, "log-level", "info", "log level, one of: panic,fatal,error,warn,warning,info,debug,trace")
+	rootCmd.PersistentFlags().StringVar(&logger.Formatter, "log-format", "text", "log format, one of: text,json")
 	rootCmd.PersistentFlags().StringVar(&config.ConfigFile, "config", "", fmt.Sprintf("config file (default: %s)", defaultConfigFile))
 
 	// Service section
